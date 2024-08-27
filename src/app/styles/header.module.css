@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1e1e2e;
+    color: #ffffff;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .logoHighlight {
+    color: #b48ead;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navLink {
+    color: #d8dee9;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navLink:hover {
+    color: #b48ead;
+  }
+  
+  .navLink img {
+    transition: filter 0.3s ease;
+  }
+  
+  .navLink:hover img {
+    filter: brightness(1.5);
+  }

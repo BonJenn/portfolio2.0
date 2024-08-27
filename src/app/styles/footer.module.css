@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #444469;
+  color: #ffffff;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.logoHighlight {
+  color: #b48ead;
+}
+
+.social {
+  margin-bottom: 1rem;
+}
+
+.social img {
+  width: 24px; /* Ensure the image scales correctly */
+  height: 24px; /* Ensure the image scales correctly */
+}
+
+.credit {
+  font-size: 1rem;
+  color: #a3a3a3;
+}
