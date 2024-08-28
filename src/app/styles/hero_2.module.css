@@ -1,48 +1,54 @@
 .hero {
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 3rem;
   background-color: #444469;
   color: #ffffff;
 }
 
-.content {
-  max-width: 50%;
+.content,
+.skills {
+  width: 45%;
 }
 
-.title .skillsTitle {
-  font-size: 3rem;
+.title,
+.skillsTitle {
+  font-size: 2.5rem;
   font-weight: bold;
+  margin-bottom: 1.5rem;
 }
 
-.description, .highlight, .button, .skillsList li {
-  font-size: 1.2rem; /* Set a consistent font size */
+.description,
+.highlight,
+.button,
+.skillsList li {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .description {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .highlight {
   font-style: italic;
+  color: #b48ead;
 }
 
 .button {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border: 2px solid #ffffff;
   background: none;
   color: #ffffff;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  margin-top: 1rem;
 }
 
 .button:hover {
   background-color: #ffffff;
-  color: #1e1e2e;
-}
-
-.skills {
-  max-width: 40%;
+  color: #444469;
 }
 
 .skillsList {
@@ -51,5 +57,14 @@
 }
 
 .skillsList li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.skillsList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #b48ead;
 }
