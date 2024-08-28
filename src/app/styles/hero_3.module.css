@@ -2,6 +2,7 @@
   padding: 2rem;
   background-color: #1e1e2e;
   color: #ffffff;
+  text-align: center;
 }
 
 .title {
@@ -20,6 +21,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
 }
 
 .project {
@@ -57,4 +59,16 @@
 
 .project:hover .overlay {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .project {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .project {
+    width: 100%;
+  }
 }
