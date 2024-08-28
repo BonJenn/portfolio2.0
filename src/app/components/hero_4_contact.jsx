@@ -7,6 +7,16 @@ import styles from '../styles/hero_4.module.css';
 const Hero4Contact = () => {
   const [state, handleSubmit] = useForm("mzzpovpd");
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Form data:", Object.fromEntries(new FormData(e.target)));
+    try {
+      await handleSubmit(e);
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
+  };
+
   if (state.succeeded) {
     return <p className={styles.successMessage}>Thanks for your message! I'll get back to you soon.</p>;
   }
@@ -14,7 +24,7 @@ const Hero4Contact = () => {
   return (
     <section id="contact" className={styles.hero}>
       <h2 className={styles.title}>Let&apos;s Work!</h2>
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <form onSubmit={onSubmit} className={styles.form}>
         <div className={styles.formGroup}>
           <label htmlFor="name">Name</label>
           <input type="text" id="name" name="name" required />
