@@ -27,6 +27,10 @@
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
   }
   
   .navLink:hover {

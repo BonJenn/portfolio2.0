@@ -3,7 +3,7 @@ import styles from '../styles/hero_3.module.css';
 
 const Hero3Work = ({ projects }) => {
   return (
-    <section className={styles.hero}>
+    <section id="work" className={styles.hero}>
       <h2 className={styles.title}>My Recent Work</h2>
       <p className={styles.description}>
         The businesses below are all full-stack solutions built with React, Next.js, Node.js, Express, MongoDB, and MySQL.
