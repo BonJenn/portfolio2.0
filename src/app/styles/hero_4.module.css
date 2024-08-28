@@ -70,3 +70,10 @@
   border-color: #1e1e2e; /* Changed border color on hover */
   box-shadow: 0 0 10px rgba(30, 30, 46, 0.5); /* Added box shadow on hover */
 }
+
+.successMessage {
+  font-size: 1.2rem;
+  color: #b48ead;
+  text-align: center;
+  margin-top: 2rem;
+}
