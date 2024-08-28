@@ -9,9 +9,25 @@ const Hero4Contact = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form data:", Object.fromEntries(new FormData(e.target)));
+    const formData = new FormData(e.target);
+    console.log("Form data:", Object.fromEntries(formData));
     try {
-      await handleSubmit(e);
+      const response = await fetch("https://formspree.io/f/mzzpovpd", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+      if (response.ok) {
+        console.log("Form submitted successfully");
+        // Reset the form
+        e.target.reset();
+        // Update the state to show success message
+        handleSubmit(e);
+      } else {
+        console.error("Form submission failed");
+      }
     } catch (error) {
       console.error("Form submission error:", error);
     }
