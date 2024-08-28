@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import styles from '../styles/hero_4.module.css';
