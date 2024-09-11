@@ -7,15 +7,13 @@ const Hero2About = () => {
       <div className={styles.content}>
         <h2 className={styles.title}>About Me</h2>
         <br></br>
-  
-    
         <p className={styles.description}>
           As a full stack developer, I am motivated by challenging projects with self-guided research and dynamic problem solving. 
           <br></br>
           <br></br>
           My true passion is crafting digital solutions that help small businesses grow.
         </p>
-        <button className={styles.button}>Resume</button>
+        <a href="https://docs.google.com/document/d/1mAUuI83jEfa4jXYJKKgW-P6dEoyKJ248cyQhrdXXMbk/pub" target="_blank" rel="noopener noreferrer" className={styles.button}>Resume</a>
       </div>
       <div className={styles.skills}>
         <h2 className={styles.skillsTitle}>Technologies & Skills</h2>

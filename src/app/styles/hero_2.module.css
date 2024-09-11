@@ -4,11 +4,41 @@
   padding: 3rem;
   background-color: #444469;
   color: #ffffff;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .content,
 .skills {
   width: 45%;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    padding: 1.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .content,
+  .skills {
+    width: 100%; /* Full width for each section */
+    margin-bottom: 1.5rem; /* Add spacing between sections */
+  }
+
+  .title,
+  .skillsTitle {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .description,
+  .highlight,
+  .button,
+  .skillsList li {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .button {
+    padding: 0.5rem 1rem; /* Adjust button padding for smaller screens */
+  }
 }
 
 .title,
