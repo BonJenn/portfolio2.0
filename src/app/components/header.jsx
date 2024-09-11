@@ -9,12 +9,17 @@ import linkedinHoverImage from '../../../public/images/linkedin_hover.png';
 
 const Header = () => {
   const [linkedinSrc, setLinkedinSrc] = useState(linkedinImage);
+  const [navActive, setNavActive] = useState(false);
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const toggleNav = () => {
+    setNavActive(!navActive);
   };
 
   return (
@@ -24,7 +29,7 @@ const Header = () => {
           <span>JONATHAN<span className={styles.logoHighlight}>/B</span></span>
         </Link>
       </div>
-      <nav className={styles.nav}>
+      <nav className={`${styles.nav} ${navActive ? styles.active : ''}`}>
         <button onClick={() => scrollToSection('about')} className={styles.navLink}>About .</button>
         <button onClick={() => scrollToSection('work')} className={styles.navLink}>Work .</button>
         <button onClick={() => scrollToSection('contact')} className={styles.navLink}>Let&apos;s Talk .</button>
@@ -37,6 +42,11 @@ const Header = () => {
           <Image src={linkedinSrc} alt="LinkedIn" width={24} height={24} />
         </Link>
       </nav>
+      <div className={styles.hamburger} onClick={toggleNav}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </header>
   );
 };

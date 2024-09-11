@@ -34,7 +34,7 @@ const Hero4Contact = () => {
   };
 
   if (state.succeeded) {
-    return <p className={styles.successMessage}>Thanks for your message! I'll get back to you soon.</p>;
+    return <p className={styles.successMessage}>Thanks for your message! I&apos;ll get back to you soon.</p>;
   }
 
   return (

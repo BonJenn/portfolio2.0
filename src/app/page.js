@@ -8,7 +8,7 @@ import Hero4Contact from './components/hero_4_contact';
 export default function Home() {
   const projects = [
     { link: 'https://thebajashrimp.com', image: '/images/work1_bajashrimp.png', name: 'The Baja Shrimp' },
-    { link: 'https://pershings.square.vercel.app', image: '/images/work2_laparks.png', name: 'Los Angeles Department of Recreation and Parks' },
+    { link: 'https://pershing-square.vercel.app', image: '/images/work2_laparks.png', name: 'Los Angeles Department of Recreation and Parks' },
     { link: 'https://bontent.vercel.app', image: '/images/work3_bontent.png', name: 'Bontent' },
 
   ];

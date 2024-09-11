@@ -5,24 +5,25 @@
     padding: 1rem 2rem;
     background-color: #1e1e2e;
     color: #ffffff;
-  }
-  
-  .logo {
+    position: relative;
+}
+
+.logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #ffffff;
-  }
-  
-  .logoHighlight {
+}
+
+.logoHighlight {
     color: #b48ead;
-  }
-  
-  .nav {
+}
+
+.nav {
     display: flex;
     gap: 2rem;
-  }
-  
-  .navLink {
+}
+
+.navLink {
     color: #d8dee9;
     text-decoration: none;
     font-size: 1.2rem;
@@ -31,16 +32,51 @@
     border: none;
     cursor: pointer;
     padding: 0;
-  }
-  
-  .navLink:hover {
+}
+
+.navLink:hover {
     color: #b48ead;
-  }
-  
-  .navLink img {
+}
+
+.navLink img {
     transition: filter 0.3s ease;
-  }
-  
-  .navLink:hover img {
+}
+
+.navLink:hover img {
     filter: brightness(1.5);
-  }
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #d8dee9;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #1e1e2e;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
