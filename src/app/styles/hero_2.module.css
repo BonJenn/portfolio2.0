@@ -5,6 +5,7 @@
   background-color: #444469;
   color: #ffffff;
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  width: 100%;
 }
 
 .content,
