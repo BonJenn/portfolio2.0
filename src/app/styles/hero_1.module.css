@@ -30,7 +30,7 @@
 .subtitle {
   font-size: 1.5rem;
   color: #a3a3a3;
-  position: relative;
+  position: static; /* Change this from relative to static */
 }
 
 .subtitle::after {

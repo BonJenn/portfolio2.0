@@ -21,6 +21,8 @@
 .nav {
     display: flex;
     gap: 2rem;
+    position: relative;
+    z-index: 10; /* Add or adjust this line */
 }
 
 .navLink {
@@ -62,18 +64,28 @@
 
 @media (max-width: 768px) {
     .nav {
-        display: none;
-        flex-direction: column;
+        flex-direction: column; /* Stack items vertically */
         position: absolute;
         top: 60px;
         right: 0;
-        background-color: #1e1e2e;
+        background-color: #444469;
         width: 100%;
         text-align: center;
+        color: #ffffff;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
     }
 
     .nav.active {
-        display: flex;
+        max-height: 300px; /* Adjust this value based on your content */
+        padding: 1rem 0;
+    }
+
+    .navLink {
+        display: block; /* Ensure each link is a block element */
+        padding: 0.5rem 0; /* Reduce padding for less vertical space */
     }
 
     .hamburger {
