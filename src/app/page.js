@@ -7,10 +7,55 @@ import Hero4Contact from './components/hero_4_contact';
 
 export default function Home() {
   const projects = [
-    { link: 'https://thebajashrimp.com', image: '/images/work1_bajashrimp.png', name: 'The Baja Shrimp' },
-    { link: 'https://pershing-square.vercel.app', image: '/images/work2_laparks.png', name: 'Los Angeles Department of Recreation and Parks' },
-    { link: 'https://bontent.vercel.app', image: '/images/work3_bontent.png', name: 'Bontent' },
+    {
+      link: 'https://fanfiles.app',
+      image: '/images/work6_fanfiles.png',
+      name: 'FanFiles',
+      description: 'A cloud storage platform and social network specifically designed for content creators and their fans. Features include secure file sharing, subscription management, and analytics.',
+      technologies: ['Next.js', 'React', 'Typescript', 'Tailwind', 'Node.js', 'Supabase', 'AWS S3', 'Stripe'],
+      github: 'https://github.com/BonJenn/fanfiles2'
+    },
+    {
+      link: 'https://bitcoinbrainiac.net',
+      image: '/images/work5_bitcoinbrainiac.png',
+      name: 'Bitcoin Brainiac',
+      description: 'A daily Bitcoin newsletter app which reads, scrapes, and summarizes the latest Bitcoin news and data, then sends it to a list of Bitcoin enthusiasts.',
 
+      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'CoinGecko API', 'OpenAI API'],
+      github: 'https://github.com/BonJenn/bitcoinbrainiac_v2'
+    },
+    {
+      link: 'https://babygauge.com',
+      image: '/images/work4_babygauge.jpg',
+      name: 'Baby Gauge',
+      description: 'An online women\'s health and pregnacy blog, which generates daily blog posts for SEO. Site includes an AI pregnanct calculator.',
+      technologies: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Chart.js', 'Tailwind CSS'],
+      github: 'https://github.com/BonJenn/babyguage'
+    },
+    {
+      link: 'https://thebajashrimp.com',
+      image: '/images/work1_bajashrimp.png',
+      name: 'The Baja Shrimp',
+      description: 'A restaurant website featuring an interactive menu, online ordering system, and reservation management. Includes real-time availability and mobile-responsive design.',
+      technologies: ['React', 'Next.js', 'Tailwind CSS', 'MongoDB'],
+      github: 'https://github.com/BonJenn/baja-shrimp'
+    },
+    {
+      link: 'https://pershing-square.vercel.app',
+      image: '/images/work2_laparks.png',
+      name: 'Los Angeles Department of Recreation and Parks',
+      description: 'A modern redesign of the LA Parks website for Pershing Square Outdoor Concert and Event Center. The new site focuses on improved user experience and accessibility. Features include park finder, event calendar, and facility reservations.',
+      technologies: ['React', 'Next.js', 'Tailwind CSS', 'MapBox API', 'Prisma'],
+      github: 'https://github.com/BonJenn/pershing-square'
+    },
+    {
+      link: 'https://bontent.net',
+      image: '/images/work3_bontent.png',
+      name: 'Bontent',
+      description: 'Bontent is a full-fledged web and software development agency specailizing in custom produdts for small and medium-sized businesses.',
+      technologies: ['React', 'Next.js', 'Node.js', 'Vercel'],
+      github: 'https://github.com/BonJenn/bontent'
+    }
   ];
 
   return (
