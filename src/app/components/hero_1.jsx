@@ -9,6 +9,14 @@ const Hero1 = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>Jonathan</h1>
         <p className={styles.subtitle}>Full-Stack Developer</p>
+        <a 
+          href="/Resume-Jonathan_Benn.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className={styles.resumeButton}
+        >
+          View Resume
+        </a>
       </div>
       <div className={styles.imageContainer}>
         <Image src={image} alt="Jonathan Benn" className={styles.image} />
