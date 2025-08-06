@@ -13,6 +13,7 @@ export default function Home() {
       name: 'LavPass',
       description: 'An iOS ap that helps people find the closest, cleanest restrooms.',
       technologies: ['Next.js', 'React', 'Typescript', 'Tailwind', 'Node.js', 'Supabase', 'AWS S3', 'Supabase'],
+      appStore: 'https://lavpass.app'
     },
     {
       link: 'https://bitcoinbrainiac.net',

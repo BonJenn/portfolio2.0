@@ -22,9 +22,15 @@ const Modal = ({ project, onClose }) => {
           <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.button}>
             View Site
           </a>
-          <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.button}>
-            View GitHub
-          </a>
+          {project.appStore ? (
+            <a href={project.appStore} target="_blank" rel="noopener noreferrer" className={styles.button}>
+              Download Now
+            </a>
+          ) : (
+            <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.button}>
+              View GitHub
+            </a>
+          )}
         </div>
       </div>
     </div>
