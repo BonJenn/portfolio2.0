@@ -8,12 +8,11 @@ import Hero4Contact from './components/hero_4_contact';
 export default function Home() {
   const projects = [
     {
-      link: 'https://fanfiles.app',
-      image: '/images/work6_fanfiles.png',
-      name: 'FanFiles',
-      description: 'A cloud storage platform and social network specifically designed for content creators and their fans. Features include secure file sharing, subscription management, and analytics.',
-      technologies: ['Next.js', 'React', 'Typescript', 'Tailwind', 'Node.js', 'Supabase', 'AWS S3', 'Stripe'],
-      github: 'https://github.com/BonJenn/fanfiles2'
+      link: 'https://lavpass.com',
+      image: '/images/work6_lavpass_blue.png',
+      name: 'LavPass',
+      description: 'An iOS ap that helps people find the closest, cleanest restrooms.',
+      technologies: ['Next.js', 'React', 'Typescript', 'Tailwind', 'Node.js', 'Supabase', 'AWS S3', 'Supabase'],
     },
     {
       link: 'https://bitcoinbrainiac.net',
