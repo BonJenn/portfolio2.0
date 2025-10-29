@@ -23,13 +23,6 @@
   .title {
     display: none;
   }
-  .subtitle {
-    text-decoration: underline;
-    text-underline-offset: 6px;
-  }
-  .subtitle::after {
-    display: none;
-  }
   .resumeButton {
     display: block;
     text-align: center;
