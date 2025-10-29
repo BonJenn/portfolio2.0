@@ -10,7 +10,7 @@ const Hero1 = () => {
         <h1 className={styles.title}>Jonathan</h1>
         <p className={styles.subtitle}>Full-Stack Developer</p>
         <a 
-          href="/Resume-Jonathan_Benn.pdf" 
+          href="https://docs.google.com/document/d/e/2PACX-1vSWpFdYaWnzi--ydwM1qPf_Xc8WRhDEu-2Zxn64v9-7fpOH8M40AXHkIqkjm7DoslWvElriXL4XNArX/pub" 
           target="_blank" 
           rel="noopener noreferrer" 
           className={styles.resumeButton}

@@ -8,6 +8,14 @@ import Hero4Contact from './components/hero_4_contact';
 export default function Home() {
   const projects = [
     {
+      link: 'https://psalion.vercel.app',
+      image: '/images/work7_psalion.png',
+      name: 'Psalion',
+      description: 'A crypto-focused venture capital firm investing in blockchain-based startups, infrastructure, and emerging web3 technologies. Psalion provides unique institutional-level investment products tailored to private clients, family offices, and professional investors.',
+      technologies: ['React', 'Next.js', 'Tailwind CSS'],
+      github: 'https://github.com/BonJenn/psalion'
+    },
+    {
       link: 'https://lavpass.com',
       image: '/images/work6_lavpass_blue.png',
       name: 'LavPass',
