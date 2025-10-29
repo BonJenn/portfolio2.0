@@ -36,7 +36,7 @@ export default function Home() {
       link: 'https://babygauge.com',
       image: '/images/work4_babygauge.jpg',
       name: 'Baby Gauge',
-      description: 'An online women\'s health and pregnacy blog, which generates daily blog posts for SEO. Site includes an AI pregnanct calculator.',
+      description: 'An online women\'s health and pregnacy blog, which generates daily blog posts for SEO. Site includes an AI pregnancy calculator.',
       technologies: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Chart.js', 'Tailwind CSS'],
       github: 'https://github.com/BonJenn/babyguage'
     },
