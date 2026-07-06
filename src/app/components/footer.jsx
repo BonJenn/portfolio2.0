@@ -18,19 +18,19 @@ const Footer = () => {
         </Link>
       </div>
       <div className={styles.social}>
-        <Link href="https://www.linkedin.com" target="_blank">
+        <Link href="https://www.linkedin.com/in/jonathan-benn" target="_blank" rel="noopener noreferrer">
           <Image
             src={linkedinSrc}
             alt="LinkedIn"
-            width={24} // Set the desired width
-            height={24} // Set the desired height
+            width={24}
+            height={24}
             onMouseEnter={() => setLinkedinSrc(linkedinHoverImage)}
             onMouseLeave={() => setLinkedinSrc(linkedinImage)}
           />
         </Link>
       </div>
       <div className={styles.credit}>
-        Designed & Built by Jonathan B © 2024
+        Designed & built by Jonathan Benn © 2026
       </div>
     </footer>
   );

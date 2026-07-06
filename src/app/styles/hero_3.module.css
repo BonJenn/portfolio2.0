@@ -1,75 +1,345 @@
 .hero {
-  padding: 2rem;
-  background-color: #1e1e2e;
-  color: #ffffff;
-  text-align: center;
   width: 100%;
+  padding: 6rem max(1rem, calc((100vw - var(--max-width)) / 2));
+  background: var(--bg);
+  color: var(--ink);
 }
 
-.title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.description {
-  font-size: 1rem;
-  color: #a3a3a3;
+.header {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 820px;
   margin-bottom: 2rem;
 }
 
-.projects {
+.eyebrow {
+  color: var(--teal);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.title {
+  font-size: 3.5rem;
+  line-height: 1.04;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.description {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.gallerySignals {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.3rem;
+}
+
+.gallerySignals span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 0.72rem;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--border-radius);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  justify-content: center;
 }
 
 .project {
-  position: relative;
-  width: calc(33.333% - 1rem);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 690px;
   overflow: hidden;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--border-radius);
-  transition: transform 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.project:hover {
-  transform: scale(1.05);
+.project:hover,
+.project:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(17, 19, 21, 0.32);
+  box-shadow: var(--shadow);
+  outline: none;
+}
+
+.mediaFrame {
+  position: relative;
+  min-height: 232px;
+  overflow: hidden;
+  background: var(--soft);
+  border-bottom: 1px solid var(--line);
+}
+
+.screenshotFrame {
+  background: #151719;
 }
 
 .projectImage {
-  width: 100%;
-  height: auto;
-  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: #ffffff;
+.vantaviewFrame .projectImage,
+.blackcrabFrame .projectImage,
+.lavpassFrame .projectImage,
+.pershingFrame .projectImage,
+.psalionFrame .projectImage,
+.bitcoinFrame .projectImage {
+  object-fit: contain;
+}
+
+.vantaviewFrame .projectImage,
+.blackcrabFrame .projectImage {
+  object-fit: cover;
+}
+
+.modalMediaFrame.vantaviewFrame .projectImage,
+.modalMediaFrame.blackcrabFrame .projectImage {
+  object-fit: contain;
+  padding: 0.45rem;
+}
+
+.iconFrame {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
-.project:hover .overlay {
-  opacity: 1;
+.appStage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 232px;
 }
 
-@media (max-width: 768px) {
-  .project {
-    width: calc(50% - 1rem);
+.appIcon {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: auto;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 18px 38px rgba(17, 19, 21, 0.22);
+}
+
+.dualAppStage {
+  gap: 0.85rem;
+}
+
+.dualAppStage .appIcon:first-child {
+  transform: translateY(-10px) rotate(-4deg);
+}
+
+.secondaryAppIcon {
+  transform: translateY(14px) rotate(5deg);
+}
+
+.phonePanel {
+  position: absolute;
+  right: 12%;
+  bottom: 22px;
+  display: grid;
+  gap: 8px;
+  width: 84px;
+  padding: 18px 12px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.64);
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(17, 19, 21, 0.12);
+}
+
+.phonePanel span {
+  display: block;
+  height: 8px;
+  background: rgba(17, 19, 21, 0.18);
+  border-radius: 99px;
+}
+
+.presearchFrame {
+  background: #e8f2e8;
+}
+
+.muhaFrame {
+  background: #171717;
+}
+
+.muhaFrame .phonePanel {
+  background: rgba(251, 250, 246, 0.1);
+  border-color: rgba(251, 250, 246, 0.16);
+}
+
+.muhaFrame .phonePanel span {
+  background: rgba(251, 250, 246, 0.28);
+}
+
+.muhaFrame .projectImage {
+  object-fit: contain;
+  padding: 0.45rem;
+}
+
+.dialedFrame {
+  background: #edf4f2;
+}
+
+.vantaviewFrame,
+.blackcrabFrame,
+.psalionFrame {
+  background: #111315;
+}
+
+.lavpassFrame {
+  background: #e8f0f5;
+}
+
+.pershingFrame {
+  background: #e9eef4;
+}
+
+.bitcoinFrame {
+  background: #f4ead7;
+}
+
+.projectBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.15rem;
+}
+
+.projectMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.projectMeta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 0.55rem;
+  background: var(--soft);
+  border-radius: 999px;
+}
+
+.project h3 {
+  font-size: 1.45rem;
+  line-height: 1.15;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.projectDescription,
+.projectRole,
+.projectImpact,
+.projectBullets {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.projectRole {
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.projectImpact {
+  padding: 0.75rem;
+  color: var(--ink);
+  background: rgba(47, 141, 133, 0.08);
+  border: 1px solid rgba(47, 141, 133, 0.16);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+}
+
+.projectBullets {
+  display: grid;
+  gap: 0.4rem;
+  padding-left: 1.05rem;
+}
+
+.projectBullets li::marker {
+  color: var(--teal);
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.modalMediaFrame {
+  min-height: 360px;
+  border: 1px solid var(--line);
+  border-radius: var(--border-radius);
+}
+
+@media (max-width: 1080px) {
+  .projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .title {
+    font-size: 2.35rem;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
   .project {
-    width: 100%;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 460px) {
+  .mediaFrame,
+  .appStage {
+    min-height: 210px;
+  }
+
+  .project h3 {
+    font-size: 1.25rem;
+  }
+
+  .modalMediaFrame {
+    min-height: 260px;
   }
 }

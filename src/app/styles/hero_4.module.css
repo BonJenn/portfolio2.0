@@ -1,79 +1,193 @@
 .hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  background-color: #1e1e2e;
-  color: #ffffff;
+  display: grid;
+  gap: 1.5rem;
   width: 100%;
+  padding: 6rem max(1rem, calc((100vw - var(--max-width)) / 2));
+  background: var(--charcoal);
+  color: var(--paper);
+}
 
+.intro {
+  display: grid;
+  gap: 1rem;
+  max-width: 760px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 850;
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-align: center; /* Centered text */
+  max-width: 680px;
+  font-size: 3.3rem;
+  line-height: 1.05;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.description {
+  max-width: 620px;
+  color: rgba(251, 250, 246, 0.74);
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.fitGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  width: min(100%, 620px);
+}
+
+.fitGrid span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.8rem;
+  color: rgba(251, 250, 246, 0.86);
+  background: rgba(251, 250, 246, 0.07);
+  border: 1px solid rgba(251, 250, 246, 0.14);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.ctaLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 0.95rem;
+  color: var(--paper);
+  background: rgba(251, 250, 246, 0.07);
+  border: 1px solid rgba(251, 250, 246, 0.18);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-weight: 850;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.ctaLink:hover,
+.ctaLink:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(251, 250, 246, 0.12);
+  outline: none;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 600px;
-  padding: 1rem; /* Added padding */
-  border-radius: 10px; /* Added border radius */
-  background-color: #2e2e3e; /* Slightly lighter background */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  width: min(100%, 840px);
+  margin-top: 0.5rem;
 }
 
 .formGroup {
-  margin-bottom: 2rem; /* Increased spacing */
+  display: grid;
+  gap: 0.45rem;
+}
+
+.messageGroup {
+  grid-column: 1 / -1;
 }
 
 .formGroup label {
-  display: block;
-  margin-bottom: 0.5rem; /* Added space between label and input */
+  color: rgba(251, 250, 246, 0.72);
+  font-size: 0.86rem;
+  font-weight: 750;
 }
 
 .formGroup input,
 .formGroup textarea {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #444469; /* Changed border color */
-  border-radius: 12px; /* Increased border radius for rounder inputs */
+  min-height: 48px;
+  padding: 0.8rem 0.9rem;
+  color: var(--paper);
+  background: rgba(251, 250, 246, 0.06);
+  border: 1px solid rgba(251, 250, 246, 0.16);
+  border-radius: var(--border-radius);
   font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #2e2e3e; /* Slightly lighter background */
-  color: #ffffff; /* Text color */
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.formGroup textarea {
+  min-height: 150px;
+  resize: vertical;
 }
 
 .formGroup input:focus,
 .formGroup textarea:focus {
-  border-color: #b48ead; /* Changed highlight color */
+  border-color: var(--gold);
+  background: rgba(251, 250, 246, 0.09);
   outline: none;
-  box-shadow: 0 0 5px rgba(180, 142, 173, 0.5); /* Adjusted box shadow color */
 }
 
 .button {
-  padding: 0.75rem 1.5rem; /* Increased padding */
-  border: 2px solid #ffffff;
-  background: #1e1e2e; /* Changed background color */
-  color: #ffffff;
+  grid-column: 1 / -1;
+  justify-self: start;
+  min-height: 46px;
+  padding: 0 1.2rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--paper);
+  border-radius: var(--border-radius);
   cursor: pointer;
-  border-radius: 8px; /* Added border radius */
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  font-size: 0.95rem;
+  font-weight: 850;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.button:hover {
-  background-color: #ffffff;
-  color: #1e1e2e;
-  border-color: #1e1e2e; /* Changed border color on hover */
-  box-shadow: 0 0 10px rgba(30, 30, 46, 0.5); /* Added box shadow on hover */
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.7;
 }
 
 .successMessage {
+  width: 100%;
+  padding: 4rem max(1rem, calc((100vw - var(--max-width)) / 2));
+  color: var(--paper);
+  background: var(--charcoal);
   font-size: 1.2rem;
-  color: #b48ead;
-  text-align: center;
-  margin-top: 2rem;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .title {
+    font-size: 2.35rem;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .ctaLinks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fitGrid {
+    grid-template-columns: 1fr;
+  }
 }

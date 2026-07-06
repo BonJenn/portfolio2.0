@@ -15,6 +15,7 @@ const Header = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+      setNavActive(false);
     }
   };
 
@@ -30,23 +31,40 @@ const Header = () => {
         </Link>
       </div>
       <nav className={`${styles.nav} ${navActive ? styles.active : ''}`}>
-        <button onClick={() => scrollToSection('about')} className={styles.navLink}>About .</button>
-        <button onClick={() => scrollToSection('work')} className={styles.navLink}>Work .</button>
-        <button onClick={() => scrollToSection('contact')} className={styles.navLink}>Let&apos;s Talk .</button>
+        <button onClick={() => scrollToSection('studio')} className={styles.navLink}>Services</button>
+        <button onClick={() => scrollToSection('agentic-workflows')} className={styles.navLink}>Case Studies</button>
+        <button onClick={() => scrollToSection('work')} className={styles.navLink}>Work</button>
+        <button onClick={() => scrollToSection('contact')} className={styles.navLink}>Start a Project</button>
+        <Link
+          href="/Resume-Jonathan_Benn.pdf"
+          className={`${styles.navLink} ${styles.resumeLink}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume
+        </Link>
         <Link 
           href="https://www.linkedin.com/in/jonathan-benn" 
           className={styles.navLink}
+          target="_blank"
+          rel="noopener noreferrer"
           onMouseEnter={() => setLinkedinSrc(linkedinHoverImage)}
           onMouseLeave={() => setLinkedinSrc(linkedinImage)}
         >
           <Image src={linkedinSrc} alt="LinkedIn" width={24} height={24} />
         </Link>
       </nav>
-      <div className={styles.hamburger} onClick={toggleNav}>
+      <button
+        type="button"
+        className={styles.hamburger}
+        onClick={toggleNav}
+        aria-label="Toggle navigation"
+        aria-expanded={navActive}
+      >
         <div></div>
         <div></div>
         <div></div>
-      </div>
+      </button>
     </header>
   );
 };

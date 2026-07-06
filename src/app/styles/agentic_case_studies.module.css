@@ -1,0 +1,341 @@
+.section {
+  width: 100%;
+  padding: 6rem max(1rem, calc((100vw - var(--max-width)) / 2));
+  color: var(--paper);
+  background:
+    linear-gradient(180deg, rgba(17, 19, 21, 0.98), rgba(30, 39, 36, 0.98)),
+    var(--charcoal);
+}
+
+.inner {
+  display: grid;
+  gap: 2rem;
+}
+
+.header {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 820px;
+}
+
+.eyebrow {
+  color: #7dcfc5;
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.header h2 {
+  max-width: 760px;
+  font-size: 3.35rem;
+  line-height: 1.04;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.header p {
+  max-width: 680px;
+  color: rgba(251, 250, 246, 0.74);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.proofRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.35rem;
+}
+
+.proofRow span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 0.72rem;
+  color: rgba(251, 250, 246, 0.82);
+  background: rgba(251, 250, 246, 0.08);
+  border: 1px solid rgba(251, 250, 246, 0.14);
+  border-radius: var(--border-radius);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.cases {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.caseCard {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  overflow: hidden;
+  color: inherit;
+  text-align: left;
+  background: rgba(251, 250, 246, 0.07);
+  border: 1px solid rgba(251, 250, 246, 0.14);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.caseCard:hover,
+.caseCard:focus-visible {
+  transform: translateY(-4px);
+  background: rgba(251, 250, 246, 0.105);
+  border-color: rgba(125, 207, 197, 0.46);
+  outline: none;
+}
+
+.workflowVisual,
+.screenshotVisual {
+  position: relative;
+  min-height: 270px;
+  aspect-ratio: 1.28 / 1;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(251, 250, 246, 0.13);
+}
+
+.workflowVisual {
+  display: grid;
+  align-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background:
+    linear-gradient(145deg, rgba(47, 141, 133, 0.38), rgba(211, 163, 54, 0.18)),
+    #151716;
+}
+
+.workflowHeader,
+.workflowSignals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.workflowHeader {
+  justify-content: space-between;
+}
+
+.workflowHeader span,
+.workflowSignals span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 0.62rem;
+  color: rgba(251, 250, 246, 0.9);
+  background: rgba(251, 250, 246, 0.1);
+  border: 1px solid rgba(251, 250, 246, 0.16);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.workflowRail {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.workflowStep {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 42px;
+  padding: 0.5rem;
+  color: var(--paper);
+  background: rgba(17, 19, 21, 0.48);
+  border: 1px solid rgba(251, 250, 246, 0.12);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.stepNumber {
+  color: #7dcfc5;
+  font-size: 0.78rem;
+}
+
+.screenshotVisual {
+  background: #202725;
+}
+
+.screenshotImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.muha .screenshotImage {
+  object-fit: contain;
+  padding: 0.45rem;
+}
+
+.vantaview .screenshotImage,
+.blackcrab .screenshotImage {
+  transform: scale(1.04);
+}
+
+.screenshotVisual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(251, 250, 246, 0.08);
+  pointer-events: none;
+}
+
+.caseBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  min-width: 0;
+  padding: 1.15rem;
+}
+
+.caseMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: rgba(251, 250, 246, 0.74);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.caseMeta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 0.55rem;
+  background: rgba(251, 250, 246, 0.08);
+  border: 1px solid rgba(251, 250, 246, 0.12);
+  border-radius: 999px;
+}
+
+.caseBody h3 {
+  font-size: 1.38rem;
+  line-height: 1.12;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.caseBody p {
+  color: rgba(251, 250, 246, 0.76);
+  font-size: 0.96rem;
+  line-height: 1.58;
+}
+
+.metricRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.metricRow span {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+  min-height: 74px;
+  padding: 0.7rem;
+  color: rgba(251, 250, 246, 0.68);
+  background: rgba(251, 250, 246, 0.08);
+  border: 1px solid rgba(251, 250, 246, 0.1);
+  border-radius: var(--border-radius);
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+
+.metricRow strong {
+  color: var(--paper);
+  font-size: 0.92rem;
+  line-height: 1.1;
+  font-weight: 850;
+  overflow-wrap: anywhere;
+}
+
+.caseFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  color: var(--paper);
+  border-top: 1px solid rgba(251, 250, 246, 0.12);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.muhaCard {
+  border-color: rgba(211, 163, 54, 0.22);
+}
+
+.vantaviewCard {
+  border-color: rgba(125, 207, 197, 0.24);
+}
+
+.blackcrabCard {
+  border-color: rgba(200, 95, 62, 0.22);
+}
+
+@media (max-width: 1080px) {
+  .cases {
+    grid-template-columns: 1fr;
+  }
+
+  .caseCard {
+    grid-template-columns: minmax(280px, 0.92fr) minmax(0, 1.08fr);
+    grid-template-rows: none;
+  }
+
+  .workflowVisual,
+  .screenshotVisual {
+    min-height: 100%;
+    border-right: 1px solid rgba(251, 250, 246, 0.13);
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .header h2 {
+    font-size: 2.35rem;
+  }
+
+  .proofRow {
+    display: grid;
+  }
+
+  .caseCard {
+    grid-template-columns: 1fr;
+  }
+
+  .workflowVisual,
+  .screenshotVisual {
+    min-height: 245px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(251, 250, 246, 0.13);
+  }
+}
+
+@media (max-width: 460px) {
+  .workflowVisual,
+  .screenshotVisual {
+    min-height: 230px;
+  }
+
+  .workflowStep {
+    grid-template-columns: 34px minmax(0, 1fr);
+    font-size: 0.82rem;
+  }
+
+  .metricRow {
+    grid-template-columns: 1fr;
+  }
+
+  .metricRow span {
+    min-height: 58px;
+  }
+}

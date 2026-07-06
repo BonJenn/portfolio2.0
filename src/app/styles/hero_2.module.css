@@ -1,101 +1,170 @@
 .hero {
-  display: flex;
-  justify-content: space-between;
-  padding: 3rem;
-  background-color: #444469;
-  color: #ffffff;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 3.5rem;
   width: 100%;
+  padding: 6rem max(1rem, calc((100vw - var(--max-width)) / 2));
+  background: var(--charcoal);
+  color: var(--paper);
 }
 
 .content,
 .skills {
-  width: 45%;
+  min-width: 0;
 }
 
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    padding: 1.5rem; /* Adjust padding for smaller screens */
-  }
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
 
-  .content,
-  .skills {
-    width: 100%; /* Full width for each section */
-    margin-bottom: 1.5rem; /* Add spacing between sections */
+.title,
+.skillsTitle,
+.stackTitle {
+  font-size: 2.8rem;
+  line-height: 1.08;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
+.stackTitle {
+  font-size: 1.55rem;
+}
+
+.description,
+.highlight {
+  max-width: 560px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.description {
+  margin-top: 1.35rem;
+  color: rgba(251, 250, 246, 0.78);
+}
+
+.highlight {
+  margin-top: 1.2rem;
+  color: rgba(251, 250, 246, 0.92);
+}
+
+.principles {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.6rem;
+}
+
+.principles article {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1rem;
+  background: rgba(251, 250, 246, 0.06);
+  border: 1px solid rgba(251, 250, 246, 0.12);
+  border-radius: var(--border-radius);
+}
+
+.principles strong {
+  color: var(--paper);
+  font-size: 0.96rem;
+}
+
+.principles p {
+  color: rgba(251, 250, 246, 0.68);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.skills {
+  display: grid;
+  gap: 2rem;
+}
+
+.workflowList {
+  display: grid;
+  gap: 1px;
+  margin-top: 1.35rem;
+  overflow: hidden;
+  list-style: none;
+  background: rgba(251, 250, 246, 0.14);
+  border: 1px solid rgba(251, 250, 246, 0.14);
+  border-radius: var(--border-radius);
+}
+
+.workflowList li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: center;
+  min-height: 56px;
+  padding: 0 1rem;
+  color: rgba(251, 250, 246, 0.86);
+  background: rgba(251, 250, 246, 0.06);
+  font-size: 0.96rem;
+  font-weight: 780;
+}
+
+.workflowList span {
+  color: #7dcfc5;
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.skillsList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+  list-style: none;
+}
+
+.skillsList li {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  background: rgba(251, 250, 246, 0.06);
+  border: 1px solid rgba(251, 250, 246, 0.12);
+  border-radius: var(--border-radius);
+}
+
+.skillsList strong {
+  color: var(--paper);
+  font-size: 0.95rem;
+}
+
+.skillsList span {
+  color: rgba(251, 250, 246, 0.68);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 
   .title,
   .skillsTitle {
-    font-size: 2rem; /* Adjust font size for smaller screens */
+    font-size: 2.35rem;
   }
 
-  .description,
-  .highlight,
-  .button,
-  .skillsList li {
-    font-size: 1rem; /* Adjust font size for smaller screens */
-  }
-
-  .button {
-    padding: 0.5rem 1rem; /* Adjust button padding for smaller screens */
+  .skillsList {
+    grid-template-columns: 1fr;
   }
 }
 
-.title,
-.skillsTitle {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-}
+@media (max-width: 520px) {
+  .title,
+  .skillsTitle {
+    font-size: 2rem;
+  }
 
-.description,
-.highlight,
-.button,
-.skillsList li {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.description {
-  margin-bottom: 1.5rem;
-}
-
-.highlight {
-  font-style: italic;
-  color: #b48ead;
-}
-
-.button {
-  padding: 0.75rem 1.5rem;
-  border: 2px solid #ffffff;
-  background: none;
-  color: #ffffff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: bold;
-  margin-top: 1rem;
-}
-
-.button:hover {
-  background-color: #ffffff;
-  color: #444469;
-}
-
-.skillsList {
-  list-style: none;
-  padding: 0;
-}
-
-.skillsList li {
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.skillsList li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #b48ead;
+  .workflowList li {
+    grid-template-columns: 40px minmax(0, 1fr);
+    min-height: 52px;
+  }
 }
