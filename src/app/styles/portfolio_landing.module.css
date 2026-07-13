@@ -1237,18 +1237,19 @@
 
 .proofCrop {
   display: grid;
-  grid-template-columns: 118px minmax(0, 1fr);
+  grid-template-columns: 1fr;
   min-width: 0;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   border: 1px solid var(--line);
   background: rgba(8, 10, 10, 0.68);
 }
 
 .proofImage {
   position: relative;
-  min-height: 112px;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .proofImage::after {
@@ -1265,25 +1266,26 @@
 }
 
 .warehouseProof img {
-  object-position: 50% 26%;
-  transform: scale(1.35);
+  object-position: 50% 50%;
+  transform: none;
 }
 
 .videoProof img {
-  object-position: 58% center;
-  transform: scale(1.16);
+  object-position: 50% 50%;
+  transform: none;
 }
 
 .agentProof img {
-  object-position: 24% 25%;
-  transform: scale(1.2);
+  object-position: 50% 38%;
+  transform: none;
 }
 
 .proofCaption {
   display: grid;
-  align-content: center;
-  gap: 0.35rem;
-  padding: 0.75rem;
+  grid-template-columns: 100px minmax(0, 1fr);
+  align-items: start;
+  gap: 0.8rem;
+  padding: 0.85rem;
 }
 
 .proofCaption span {
@@ -1837,24 +1839,24 @@
 
   .proofImage {
     min-height: 0;
-    aspect-ratio: 16 / 8;
+    aspect-ratio: 16 / 9;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 
   .warehouseProof img {
-    object-position: 50% 24%;
-    transform: scale(1.12);
+    object-position: 50% 50%;
+    transform: none;
   }
 
   .videoProof img {
-    object-position: 50% 46%;
-    transform: scale(1.02);
+    object-position: 50% 50%;
+    transform: none;
   }
 
   .agentProof img {
-    object-position: 32% 24%;
-    transform: scale(1.1);
+    object-position: 50% 38%;
+    transform: none;
   }
 
   .proofCaption {

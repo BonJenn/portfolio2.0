@@ -33,9 +33,9 @@ const caseStudies = [
     category: 'Operations platform',
     visual: 'warehouse',
     visualLabel: 'Fulfillment control',
-    image: '/images/work_muha_warehouse.png',
+    image: '/images/work_warehouse_concept.png',
     proofPosition: 'warehouseProof',
-    proofCaption: 'Production warehouse controls for queues, labels, inventory, and exceptions.',
+    proofCaption: 'A fulfillment command center shaped around queues, inventory, shipments, and exceptions.',
     situation: 'Reward claims, store orders, stock, labels, returns, and customer issues were one connected problem.',
     system: 'A warehouse control surface with clear queues, grouped shipments, inventory signals, and shipping automation.',
     result: 'Operators can see what is ready, what is stuck, and what needs action without chasing separate tools.',
@@ -47,9 +47,9 @@ const caseStudies = [
     category: 'Real-time video SaaS',
     visual: 'video',
     visualLabel: 'Live production signal',
-    image: '/images/work_vantaview.png',
+    image: '/images/work_vantaview_concept.png',
     proofPosition: 'videoProof',
-    proofCaption: 'A supporting look at the live video product behind the signal flow.',
+    proofCaption: 'A live production workspace centered on camera control, stream health, and AI-assisted directing.',
     situation: 'A live production app needed video performance, smart camera help, licensing, trials, and releases to work as one product.',
     system: 'A Mac-native video engine supported by customer access, product telemetry, updates, and AI production tools.',
     result: 'The path from code to notarized build to monitored customer trial became measurable and repeatable.',
@@ -61,9 +61,9 @@ const caseStudies = [
     category: 'Agent command center',
     visual: 'agents',
     visualLabel: 'Agent operations',
-    image: '/images/work_blackcrab.png',
+    image: '/images/work_agent_operations_concept.png',
     proofPosition: 'agentProof',
-    proofCaption: 'The local desktop workspace used to manage real agent sessions.',
+    proofCaption: 'A local agent workspace built for parallel sessions, review checkpoints, and tool activity.',
     situation: 'Serious AI coding work spreads across sessions, terminals, diffs, previews, and usage limits.',
     system: 'A local desktop app for finding sessions, running parallel agents, reviewing tool calls, and watching usage.',
     result: 'Agent work is easier to resume, inspect, and manage without sending project data to another hosted service.',
@@ -177,13 +177,13 @@ export default function PortfolioLanding() {
                     <div className={`${styles.proofImage} ${styles[project.proofPosition]}`}>
                       <Image
                         src={project.image}
-                        alt={`${project.name} production interface crop`}
+                        alt={`${project.name} interface concept`}
                         fill
                         sizes="(max-width: 900px) 90vw, 360px"
                       />
                     </div>
                     <div className={styles.proofCaption}>
-                      <span>Supporting proof</span>
+                      <span>Interface concept</span>
                       <p>{project.proofCaption}</p>
                     </div>
                   </div>
