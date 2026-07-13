@@ -1,15 +1,13 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from './components/header';
-import Footer from './components/footer';
+import { Inter } from 'next/font/google';
+import './globals.css';
 import AnalyticsScripts from './components/AnalyticsScripts';
 import LeadAttribution from './components/LeadAttribution';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "Jonathan Benn | AI Automation, Dashboards & Product Systems",
-  description: "Jonathan Benn builds practical AI automation systems, internal dashboards, customer portals, mobile apps, and workflow software for businesses with messy operations.",
+  title: 'Jonathan Benn | AI Automation & Custom Software',
+  description: 'AI automation, web apps, mobile apps, dashboards, and custom software built around real business workflows.'
 };
 
 export default function RootLayout({ children }) {
@@ -18,9 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <AnalyticsScripts />
         <LeadAttribution />
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
