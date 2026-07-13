@@ -1,26 +1,22 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from './components/header';
-import Footer from './components/footer';
+import { DM_Sans } from 'next/font/google';
+import './globals.css';
 import AnalyticsScripts from './components/AnalyticsScripts';
 import LeadAttribution from './components/LeadAttribution';
 
-const inter = Inter({ subsets: ["latin"] });
+const dmSans = DM_Sans({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "Jonathan Benn | AI Automation, Dashboards & Product Systems",
-  description: "Jonathan Benn builds practical AI automation systems, internal dashboards, customer portals, mobile apps, and workflow software for businesses with messy operations.",
+  title: 'Jonathan Benn | Apps, Automation & Software',
+  description: 'Jonathan Benn builds web apps, mobile apps, AI automation, dashboards, and custom software for growing teams.'
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={dmSans.className}>
         <AnalyticsScripts />
         <LeadAttribution />
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
