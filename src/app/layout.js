@@ -15,8 +15,8 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata = {
-  title: 'Jonathan Benn | Software Systems & AI Automation',
-  description: 'Production software systems, AI automation, internal platforms, and web, mobile, and desktop apps.'
+  title: 'JB Systems | AI Automation & Custom Software',
+  description: 'JB Systems builds production AI automation, internal platforms, and web, mobile, and desktop software around real business workflows.'
 };
 
 export default function RootLayout({ children }) {

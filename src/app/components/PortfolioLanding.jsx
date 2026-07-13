@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useForm, ValidationError } from '@formspree/react';
 import { readLeadAttribution } from './LeadAttribution';
+import HeroWorkflow from './HeroWorkflow';
+import CaseSystemVisual from './CaseSystemVisual';
 import styles from '../styles/portfolio_landing.module.css';
 
 const capabilities = [
@@ -29,7 +31,11 @@ const caseStudies = [
     code: 'OPS-01',
     name: 'Warehouse fulfillment',
     category: 'Operations platform',
+    visual: 'warehouse',
+    visualLabel: 'Fulfillment control',
     image: '/images/work_muha_warehouse.png',
+    proofPosition: 'warehouseProof',
+    proofCaption: 'Production warehouse controls for queues, labels, inventory, and exceptions.',
     situation: 'Reward claims, store orders, stock, labels, returns, and customer issues were one connected problem.',
     system: 'A warehouse control surface with clear queues, grouped shipments, inventory signals, and shipping automation.',
     result: 'Operators can see what is ready, what is stuck, and what needs action without chasing separate tools.',
@@ -39,7 +45,11 @@ const caseStudies = [
     code: 'VID-02',
     name: 'Vantaview',
     category: 'Real-time video SaaS',
+    visual: 'video',
+    visualLabel: 'Live production signal',
     image: '/images/work_vantaview.png',
+    proofPosition: 'videoProof',
+    proofCaption: 'A supporting look at the live video product behind the signal flow.',
     situation: 'A live production app needed video performance, smart camera help, licensing, trials, and releases to work as one product.',
     system: 'A Mac-native video engine supported by customer access, product telemetry, updates, and AI production tools.',
     result: 'The path from code to notarized build to monitored customer trial became measurable and repeatable.',
@@ -49,7 +59,11 @@ const caseStudies = [
     code: 'AI-03',
     name: 'Blackcrab',
     category: 'Agent command center',
+    visual: 'agents',
+    visualLabel: 'Agent operations',
     image: '/images/work_blackcrab.png',
+    proofPosition: 'agentProof',
+    proofCaption: 'The local desktop workspace used to manage real agent sessions.',
     situation: 'Serious AI coding work spreads across sessions, terminals, diffs, previews, and usage limits.',
     system: 'A local desktop app for finding sessions, running parallel agents, reviewing tool calls, and watching usage.',
     result: 'Agent work is easier to resume, inspect, and manage without sending project data to another hosted service.',
@@ -68,7 +82,7 @@ export default function PortfolioLanding() {
   return (
     <main className={styles.page}>
       <header className={styles.header}>
-        <a href="#top" className={styles.wordmark}>JB / SYSTEMS</a>
+        <a href="#top" className={styles.wordmark}>JB SYSTEMS</a>
         <div className={styles.availability}><span /> Open for select projects</div>
         <nav aria-label="Main navigation">
           <a href="#systems">Systems</a>
@@ -78,21 +92,10 @@ export default function PortfolioLanding() {
       </header>
 
       <section id="top" className={styles.hero}>
-        <div className={styles.heroFrames} aria-hidden="true">
-          <div className={styles.frameOne}>
-            <Image src="/images/work_blackcrab.png" alt="" fill priority sizes="55vw" />
-          </div>
-          <div className={styles.frameTwo}>
-            <Image src="/images/work_vantaview.png" alt="" fill priority sizes="45vw" />
-          </div>
-          <div className={styles.frameThree}>
-            <Image src="/images/work_muha_warehouse.png" alt="" fill priority sizes="42vw" />
-          </div>
-        </div>
+        <HeroWorkflow />
         <div className={styles.heroOverlay} aria-hidden="true" />
-        <div className={styles.heroGrid} aria-hidden="true" />
         <div className={styles.heroCopy}>
-          <p className={styles.heroLabel}>AI automation / software engineering / product delivery</p>
+          <p className={styles.heroLabel}>JB Systems / AI automation / software delivery</p>
           <h1>Software systems for work that has outgrown spreadsheets.</h1>
           <div className={styles.heroBottom}>
             <p>
@@ -155,14 +158,7 @@ export default function PortfolioLanding() {
                 <span>Production work</span>
               </div>
               <div className={styles.caseMain}>
-                <div className={styles.caseImage}>
-                  <Image
-                    src={project.image}
-                    alt={`${project.name} project interface`}
-                    fill
-                    sizes="(max-width: 900px) 100vw, 62vw"
-                  />
-                </div>
+                <CaseSystemVisual project={project} />
                 <div className={styles.caseSummary}>
                   <h3>{project.name}</h3>
                   <div className={styles.caseField}>
@@ -176,6 +172,20 @@ export default function PortfolioLanding() {
                   <div className={styles.caseField}>
                     <span>Result</span>
                     <p>{project.result}</p>
+                  </div>
+                  <div className={styles.proofCrop}>
+                    <div className={`${styles.proofImage} ${styles[project.proofPosition]}`}>
+                      <Image
+                        src={project.image}
+                        alt={`${project.name} production interface crop`}
+                        fill
+                        sizes="(max-width: 900px) 90vw, 360px"
+                      />
+                    </div>
+                    <div className={styles.proofCaption}>
+                      <span>Supporting proof</span>
+                      <p>{project.proofCaption}</p>
+                    </div>
                   </div>
                   <div className={styles.stack}>
                     {project.stack.map((item) => <span key={item}>{item}</span>)}
@@ -245,8 +255,8 @@ export default function PortfolioLanding() {
       </section>
 
       <footer className={styles.footer}>
-        <span>Jonathan Benn / 2026</span>
-        <span>AI automation, software, and apps</span>
+        <span>JB Systems / Jonathan Benn</span>
+        <span>Automation, software, and apps</span>
         <span>Built in Los Angeles</span>
       </footer>
     </main>
