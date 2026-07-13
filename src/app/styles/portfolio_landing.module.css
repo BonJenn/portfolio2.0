@@ -1831,11 +1831,41 @@
   }
 
   .proofCrop {
-    grid-template-columns: 96px minmax(0, 1fr);
+    grid-template-columns: 1fr;
+    margin-top: 1.25rem;
   }
 
   .proofImage {
-    min-height: 122px;
+    min-height: 0;
+    aspect-ratio: 16 / 8;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .warehouseProof img {
+    object-position: 50% 24%;
+    transform: scale(1.12);
+  }
+
+  .videoProof img {
+    object-position: 50% 46%;
+    transform: scale(1.02);
+  }
+
+  .agentProof img {
+    object-position: 32% 24%;
+    transform: scale(1.1);
+  }
+
+  .proofCaption {
+    grid-template-columns: 92px minmax(0, 1fr);
+    align-items: start;
+    gap: 0.75rem;
+    padding: 0.85rem;
+  }
+
+  .proofCaption p {
+    font-size: 0.78rem;
   }
 
   .caseField {
