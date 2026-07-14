@@ -1,11 +1,10 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { useForm, ValidationError } from '@formspree/react';
 import { readLeadAttribution } from './LeadAttribution';
 import HeroWorkflow from './HeroWorkflow';
-import CaseSystemVisual from './CaseSystemVisual';
+import CaseDeviceVisual from './CaseDeviceVisual';
 import styles from '../styles/portfolio_landing.module.css';
 
 const capabilities = [
@@ -33,8 +32,8 @@ const caseStudies = [
     category: 'Operations platform',
     visual: 'warehouse',
     visualLabel: 'Fulfillment control',
+    device: 'desktop',
     image: '/images/work_warehouse_concept.png',
-    proofPosition: 'warehouseProof',
     proofCaption: 'A fulfillment command center shaped around queues, inventory, shipments, and exceptions.',
     situation: 'Reward claims, store orders, stock, labels, returns, and customer issues were one connected problem.',
     system: 'A warehouse control surface with clear queues, grouped shipments, inventory signals, and shipping automation.',
@@ -47,8 +46,8 @@ const caseStudies = [
     category: 'Real-time video SaaS',
     visual: 'video',
     visualLabel: 'Live production signal',
+    device: 'laptop',
     image: '/images/work_vantaview_concept.png',
-    proofPosition: 'videoProof',
     proofCaption: 'A live production workspace centered on camera control, stream health, and AI-assisted directing.',
     situation: 'A live production app needed video performance, smart camera help, licensing, trials, and releases to work as one product.',
     system: 'A Mac-native video engine supported by customer access, product telemetry, updates, and AI production tools.',
@@ -61,8 +60,8 @@ const caseStudies = [
     category: 'Agent command center',
     visual: 'agents',
     visualLabel: 'Agent operations',
+    device: 'desktop',
     image: '/images/work_agent_operations_concept.png',
-    proofPosition: 'agentProof',
     proofCaption: 'A local agent workspace built for parallel sessions, review checkpoints, and tool activity.',
     situation: 'Serious AI coding work spreads across sessions, terminals, diffs, previews, and usage limits.',
     system: 'A local desktop app for finding sessions, running parallel agents, reviewing tool calls, and watching usage.',
@@ -158,7 +157,7 @@ export default function PortfolioLanding() {
                 <span>Production work</span>
               </div>
               <div className={styles.caseMain}>
-                <CaseSystemVisual project={project} />
+                <CaseDeviceVisual project={project} />
                 <div className={styles.caseSummary}>
                   <h3>{project.name}</h3>
                   <div className={styles.caseField}>
@@ -172,20 +171,6 @@ export default function PortfolioLanding() {
                   <div className={styles.caseField}>
                     <span>Result</span>
                     <p>{project.result}</p>
-                  </div>
-                  <div className={styles.proofCrop}>
-                    <div className={`${styles.proofImage} ${styles[project.proofPosition]}`}>
-                      <Image
-                        src={project.image}
-                        alt={`${project.name} interface concept`}
-                        fill
-                        sizes="(max-width: 900px) 90vw, 360px"
-                      />
-                    </div>
-                    <div className={styles.proofCaption}>
-                      <span>Interface concept</span>
-                      <p>{project.proofCaption}</p>
-                    </div>
                   </div>
                   <div className={styles.stack}>
                     {project.stack.map((item) => <span key={item}>{item}</span>)}
